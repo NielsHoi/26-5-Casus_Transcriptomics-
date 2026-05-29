@@ -22,3 +22,16 @@ sum(resultaten$padj < 0.05 & resultaten$log2FoldChange < -1, na.rm = TRUE)
 hoogste_fold_change <- resultaten[order(resultaten$log2FoldChange, decreasing = TRUE), ]
 laagste_fold_change <- resultaten[order(resultaten$log2FoldChange, decreasing = FALSE), ]
 laagste_p_waarde <- resultaten[order(resultaten$padj, decreasing = FALSE), ]
+
+#Visualisatie: Volcano plot
+EnhancedVolcano(resultaten,
+                lab = rownames(resultaten),
+                x = 'log2FoldChange',
+                y = 'padj')
+
+dev.copy(png, 'VolcanoplotReuma.png', 
+         width = 8,
+         height = 10,
+         units = 'in',
+         res = 500)
+dev.off()
