@@ -1,0 +1,24 @@
+setwd("C:/.../casus_Transcriptomics")
+
+library(BiocManager)
+
+# Maak DESeqDataSet aan
+dds <- DESeqDataSetFromMatrix(countData = counts,
+                              colData = Ziekofniet_table,
+                              design = ~ Ziekofniet)
+
+head(counts)
+head(Ziekofniet_table)
+
+# Voer analyse uit
+dds <- DESeq(dds)
+resultaten <- results(dds)
+
+write.table(resultaten, file = 'ResultatenReuma.csv', row.names = TRUE, col.names = TRUE)
+
+sum(resultaten$padj < 0.05 & resultaten$log2FoldChange > 1, na.rm = TRUE)
+sum(resultaten$padj < 0.05 & resultaten$log2FoldChange < -1, na.rm = TRUE)
+
+hoogste_fold_change <- resultaten[order(resultaten$log2FoldChange, decreasing = TRUE), ]
+laagste_fold_change <- resultaten[order(resultaten$log2FoldChange, decreasing = FALSE), ]
+laagste_p_waarde <- resultaten[order(resultaten$padj, decreasing = FALSE), ]
