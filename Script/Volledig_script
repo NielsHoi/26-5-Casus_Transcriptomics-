@@ -1,0 +1,192 @@
+setwd("C:/.../casus_Transcriptomics")
+
+library(BiocManager)
+
+#Package downloaden
+BiocManager::install('Rsubread')
+#Package laden
+library(Rsubread)
+
+#referentiegenoom inndexeren
+buildindex(
+  basename = 'ref_humangenome', 
+  reference = 'GCF_000001405.40_GRCh38.p14_genomic.fna', 
+  memory = 4000,
+  indexSplit = TRUE)
+
+align.gezond1 <- align(index = "ref_humangenome", readfile1 = "SRR4785819_1_subset40k.fastq", readfile2 = "SRR4785819_2_subset40k.fastq", output_file = "gezond1.BAM")
+align.gezond2 <- align(index = "ref_humangenome", readfile1 = "SRR4785820_1_subset40k.fastq", readfile2 = "SRR4785820_2_subset40k.fastq", output_file = "gezond2.BAM")
+align.gezond3 <- align(index = "ref_humangenome", readfile1 = "SRR4785828_1_subset40k.fastq", readfile2 = "SRR4785828_2_subset40k.fastq", output_file = "gezond3.BAM")
+align.gezond4 <- align(index = "ref_humangenome", readfile1 = "SRR4785831_1_subset40k.fastq", readfile2 = "SRR4785831_2_subset40k.fastq", output_file = "gezond4.BAM")
+
+align.ziek1 <- align(index = "ref_humangenome", readfile1 = "SRR4785979_1_subset40k.fastq", readfile2 = "SRR4785979_2_subset40k.fastq", output_file = "ziek1.BAM")
+align.ziek2 <- align(index = "ref_humangenome", readfile1 = "SRR4785980_1_subset40k.fastq", readfile2 = "SRR4785980_2_subset40k.fastq", output_file = "ziek2.BAM")
+align.ziek3 <- align(index = "ref_humangenome", readfile1 = "SRR4785986_1_subset40k.fastq", readfile2 = "SRR4785986_2_subset40k.fastq", output_file = "ziek3.BAM")
+align.ziek4 <- align(index = "ref_humangenome", readfile1 = "SRR4785988_1_subset40k.fastq", readfile2 = "SRR4785988_2_subset40k.fastq", output_file = "ziek4.BAM")
+
+# Laad Rsamtools voor sorteren en indexeren (dowloaden indien nodig)
+BiocManager::install('Rsamtools')
+library(Rsamtools)
+
+# Bestandsnamen van de monsters
+samples <- c('gezond1', 'gezond2', 'gezond3', 'gezond4', 'ziek1', 'ziek2', 'ziek3', 'ziek4')
+
+# Voor elk monster: sorteer en indexeer de BAM-file
+# Sorteer BAM-bestanden
+lapply(samples, function(s) {sortBam(file = paste0(s, '.BAM'), destination = paste0(s, '.sorted'))
+})
+# Indexeer de gesorteerde BAM-file
+lapply(samples, function(s) {indexBam(file = paste0(s, '.sorted.bam'))
+}) 
+
+#Countmatrix maken
+allsamples <- c("gezond1.bam", "gezond2.BAM", "gezond3.BAM", "gezond4.BAM", "ziek1.BAM", "ziek2.BAM", "ziek3.BAM", "ziek4.BAM")
+
+count_matrix <- featureCounts(
+  files = allsamples,
+  annot.ext = "genomic.gtf",
+  isPairedEnd = TRUE,
+  isGTFAnnotationFile = TRUE, 
+  GTF.featureType = "gene",
+  GTF.attrType = "gene_id",
+  useMetaFeatures = TRUE
+)  
+
+#Countmatrix inzien
+str(count_matrix)
+
+CountMatrix <- count_matrix$counts
+head(CountMatrix)
+
+colnames(CountMatrix) <- c("gezond1", "gezond2", "gezond3", "gezond4", "ziek1", "ziek2", "ziek3", "ziek4")
+
+head(CountMatrix)
+
+write.csv(CountMatrix, 'CountMatrix.csv')
+
+# Count matrix inladen
+file.exists("count_matrix_RA.txt")
+
+counts <- read.delim("count_matrix_RA.txt", row.names = 1)
+
+BiocManager::install("DESeq2")
+BiocManager::install("KEGGREST")
+BiocManager::install("EnhancedVolcano")
+BiocManager::install("pathview")
+
+library(DESeq2)
+library(KEGGREST)
+library(EnhancedVolcano)
+library(pathview)
+
+Ziekofniet <- c("gezond", "gezond", "gezond", "gezond", "ziek", "ziek", "ziek", "ziek")
+Ziekofniet_table <- data.frame(Ziekofniet)
+
+rownames(Ziekofniet_table) <- c('SRR4785819', 'SRR4785820', 'SRR4785828', 'SRR4785831', 'SRR4785979', 'SRR4785980', 'SRR4785986', 'SRR4785988')
+
+head(Ziekofniet_table)
+
+# Maak DESeqDataSet aan
+dds <- DESeqDataSetFromMatrix(countData = counts,
+                              colData = Ziekofniet_table,
+                              design = ~ Ziekofniet)
+
+head(counts)
+head(Ziekofniet_table)
+
+# Voer analyse uit
+dds <- DESeq(dds)
+resultaten <- results(dds)
+
+write.table(resultaten, file = 'ResultatenReuma.csv', row.names = TRUE, col.names = TRUE)
+
+sum(resultaten$padj < 0.05 & resultaten$log2FoldChange > 1, na.rm = TRUE)
+sum(resultaten$padj < 0.05 & resultaten$log2FoldChange < -1, na.rm = TRUE)
+
+hoogste_fold_change <- resultaten[order(resultaten$log2FoldChange, decreasing = TRUE), ]
+laagste_fold_change <- resultaten[order(resultaten$log2FoldChange, decreasing = FALSE), ]
+laagste_p_waarde <- resultaten[order(resultaten$padj, decreasing = FALSE), ]
+
+#Visualisatie: Volcano plot
+EnhancedVolcano(resultaten,
+                lab = rownames(resultaten),
+                x = 'log2FoldChange',
+                y = 'padj')
+
+dev.copy(png, 'VolcanoplotReuma.png', 
+         width = 8,
+         height = 10,
+         units = 'in',
+         res = 500)
+dev.off()
+
+#GO-analyse
+BiocManager::install("goseq")
+BiocManager::install("geneLenDataBase")
+BiocManager::install("org.Dm.eg.db")
+BiocManager::install("DOSE")
+BiocManager::install("clusterProfiler")
+
+library("goseq")
+library("geneLenDataBase")
+library(org.Hs.eg.db)
+library(dplyr)
+library(DOSE)
+library(clusterProfiler)
+
+res <- as.data.frame(resultaten)
+SignificanteGenen <- res %>%
+  filter(padj < 0.05)
+
+Genenlijst <- rownames(SignificanteGenen)
+GenenDataFrame <- bitr(Genenlijst, 
+                       fromType = "SYMBOL",
+                       toType = "ENTREZID",
+                       OrgDb = org.Hs.eg.db)
+
+enrichGO <- enrichGO(
+  gene = GenenDataFrame$ENTREZID,
+  OrgDb = org.Hs.eg.db,
+  ont = "BP", 
+  pvalueCutoff = 0.05,
+  readable = TRUE)
+
+dotplot(enrichGO, showCategory = 10)+labs(title="GO-analyse op relevante genen bij Reumatoïde artritis")+theme(axis.text.y = element_text(size = 10, color = "darkblue")) + theme(axis.text.x = element_text(size = 14, color = "darkblue"))
+
+ggsave("GO_plot.png", width = 10, height = 10, dpi = 300)
+
+#KEGG-pathways
+
+KEGG <- enrichKEGG(
+  gene = GenenDataFrame$ENTREZID,
+  organism = "hsa",
+  pvalueCutoff = 0.05)
+
+KEGGDataFrame <- as.data.frame(KEGG)
+KEGGDataFrame$Percentage <- (KEGGDataFrame$Count / sum(KEGGDataFrame$Count)) * 100
+KEGGDataFrame <- KEGGDataFrame[order(KEGGDataFrame$Percentage, decreasing = TRUE), ]
+TienGenen <- head(KEGGDataFrame, 10)
+
+ggplot(TienGenen, aes(x = Percentage, 
+                  y = reorder(Description, Percentage))) +
+  geom_point(aes(size = Count, color = p.adjust)) +
+  scale_color_gradient(low = "darkblue", high = "lightblue") +
+  ylab("Pathway") +
+  xlab("Percentage Genen (%)") +
+  theme_light() +
+  theme(axis.text.y = element_text(size = 14, color = "darkblue")) + theme(axis.text.x = element_text(size = 14, color = "darkblue"))+
+  labs(title = "KEGG Pathways Analyse bij Reumatoïde Artritis")
+  
+ggsave("keggpathway_plot.png", width = 10, height = 10, dpi = 300)
+
+#Pathview
+pathview(
+  gene.data = Genenlijst,
+  pathway.id = "hsa05323",
+  species = "hsa",
+  gene.idtype = "SYMBOL",
+  limit = list(gene = 5),
+  mid = list(gene = "blue"),   
+  out.suffix = "RA_pathway"
+)
+
