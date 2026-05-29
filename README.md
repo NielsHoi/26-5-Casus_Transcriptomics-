@@ -24,6 +24,7 @@ Verder is er nog een pathway geanalyseerd, de [Rheumatoid arthritis pathway](htt
 /RA_Pathway.png"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/blob/main/Resultaten/RA_Pathway.png). Op deze kaart zijn verschillende genen te zien die belangrijk zijn voor mensen die ziek zijn met RA. Op de geanalyseerde kaart zijn sommige genen gekleurd. Als het gen rood is gekleurd is de expressie hoog, en bij een gen dat blauw is gekleurd, wordt de expressie juist lager.
 
 ## Conclusie
+Bij dit onderzoek werd gekeken naar de genexpressie van genen die betrokken zijn bij Reumatoïde arrtritis (RA). Uit dit onderzoek blijkt dat er statistisch significant verschil zit tussen de genexpressie van mensen die ziek zijn met RA, en gezonde mensen. De GO-analyse laat zien dat genen die meer tot expressie komen bij mensen met RA betrokken zijn bij het differentieren van lymfocyten en andere immuunsysteem gerelateerde biologische processen. De resultaten bevestigen dat reumaroïde artritis een autoimmuunziekte is. Daarnaast is er bij de pathway-analyse te zien dat er ook sprake is van ontstekingen en abnormale groei van pannus (weefsel in gewrichten).  
 
 ## Beheren
 
