@@ -1,7 +1,7 @@
-# Titlel
+# Significant verschil tussen genexpressie van mensen met reumatoïde artritis en gezonde mensen
 <sub>Niels Hoitsma - nielshoitsma1@student.nhlstenden.com - laatste bewerking: 29-5-2026</sub>
 ## Inleiding
-Reumatoïde artritis (RA) is een chronische ziekte waarbij het immuunsysteem de mens als het ware aanvalt. Hierdoor kan onsteking van gewrichtsslijmvlies ontstaan, afbraak van kraakbeen plaatsvinden en vorming van abnormaal weefsel. 
+Reumatoïde artritis (RA) is een chronische ziekte waarbij het immuunsysteem het synovium (ook wel bekend als het gewrichtsslijmvlies) van een mens als het ware aanvalt. Hierdoor kan onsteking van gewrichtsslijmvlies ontstaan, afbraak van kraakbeen plaatsvinden en vorming van abnormaal weefsel, ook wel pannus genoemd [[1]](https://pmc.ncbi.nlm.nih.gov/articles/PMC8780115/pdf/ijms-23-00905.pdf). Hierdoor kan men last krijgen van pijn, zwellingen, of stijfheid. Belangrijke oorzaken van RA zijn erfelijkeid, omgevingsfactoren zoals roken, en immuunactivatie. Voor nu is er helaas nog geen goed werkend medicijn. Er zijn verschillende medicijnen beschikbaar, maar niet alle patienten reageren daar goed op. Door het gebrek aan een goed werkend medicijn is er behoefte naar onderzoek naar reuma [[2]](https://core.ac.uk/reader/77600864?utm_source=linkout).
 ### Onderzoeksdoel
 In dit onderzoek wordt met behulp van transcriptomics onderzocht welke genen tot expressie komen bij vier mensen met RA en vier mensen zonder RA. De acht vekregen samples worden met het humane genoom vergeleken in Rstudio, waarbij gekeken wordt naar de genexpressie en metobolic pathways.
 ## Materiaal en Methode
@@ -26,6 +26,11 @@ Verder is er nog een pathway geanalyseerd, de [Rheumatoid arthritis pathway](htt
 ## Conclusie
 Bij dit onderzoek werd gekeken naar de genexpressie van genen die betrokken zijn bij Reumatoïde arrtritis (RA). Uit dit onderzoek blijkt dat er statistisch significant verschil zit tussen de genexpressie van mensen die ziek zijn met RA, en gezonde mensen. De GO-analyse laat zien dat genen die meer tot expressie komen bij mensen met RA betrokken zijn bij het differentieren van lymfocyten en andere immuunsysteem gerelateerde biologische processen. De resultaten bevestigen dat reumaroïde artritis een autoimmuunziekte is. Daarnaast is er bij de pathway-analyse te zien dat er ook sprake is van ontstekingen en abnormale groei van pannus (weefsel in gewrichten).  
 
-## Beheren
-
 ## Bronnen en AI-gebruik
+### Bronnen
+Voor het verslag zijn de volgende bronnen gebruikt:
+[[1]](https://pmc.ncbi.nlm.nih.gov/articles/PMC8780115/pdf/ijms-23-00905.pdf) Jang, S., Kwon, E. J., & Lee, J. J. (2022) Rheumatoid Arthritis: Pathogenic Roles of Diverse Immune Cells. In International Journal of Molecular Sciences (Vol. 23, Number 2). MDPI. https://doi.org/10.3390/ijms23020905
+
+[[2]](https://core.ac.uk/reader/77600864?utm_source=linkout) Author, C., Smolen, J. S., Author, F., Smolen Order of Authors, J. S., Aletaha, D., McInnes, I., & Smolen, J. (n.d.). Elsevier Editorial System(tm) for The Lancet Manuscript Draft Manuscript Number: Title: Rheumatoid Arthritis Article Type: Invited Seminar Seminar: Rheumatoid Arthritis.
+### AI-gebruik
+AI is gebruikt om te helpen met spelling, het helpen beginnen met informatie opzoeken, en met het uitleggen van errors in Rstudio.
