@@ -1,0 +1,38 @@
+setwd("C:/.../casus_Transcriptomics")
+
+library(BiocManager)
+
+#KEGG-pathways
+
+KEGG <- enrichKEGG(
+  gene = GenenDataFrame$ENTREZID,
+  organism = "hsa",
+  pvalueCutoff = 0.05)
+
+KEGGDataFrame <- as.data.frame(KEGG)
+KEGGDataFrame$Percentage <- (KEGGDataFrame$Count / sum(KEGGDataFrame$Count)) * 100
+KEGGDataFrame <- KEGGDataFrame[order(KEGGDataFrame$Percentage, decreasing = TRUE), ]
+TienGenen <- head(KEGGDataFrame, 10)
+
+ggplot(TienGenen, aes(x = Percentage, 
+                  y = reorder(Description, Percentage))) +
+  geom_point(aes(size = Count, color = p.adjust)) +
+  scale_color_gradient(low = "darkblue", high = "lightblue") +
+  ylab("Pathway") +
+  xlab("Percentage Genen (%)") +
+  theme_light() +
+  theme(axis.text.y = element_text(size = 14, color = "darkblue")) + theme(axis.text.x = element_text(size = 14, color = "darkblue"))+
+  labs(title = "KEGG Pathways Analyse bij Reumatoïde Artritis")
+  
+ggsave("keggpathway_plot.png", width = 10, height = 10, dpi = 300)
+
+#Pathview
+pathview(
+  gene.data = Genenlijst,
+  pathway.id = "hsa05323",
+  species = "hsa",
+  gene.idtype = "SYMBOL",
+  limit = list(gene = 5),
+  mid = list(gene = "blue"),   
+  out.suffix = "RA_pathway"
+)
