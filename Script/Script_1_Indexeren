@@ -1,0 +1,40 @@
+setwd("C:/.../casus_Transcriptomics")
+
+library(BiocManager)
+
+#Package downloaden
+BiocManager::install('Rsubread')
+#Package laden
+library(Rsubread)
+
+#referentiegenoom inndexeren
+buildindex(
+  basename = 'ref_humangenome', 
+  reference = 'GCF_000001405.40_GRCh38.p14_genomic.fna', 
+  memory = 4000,
+  indexSplit = TRUE)
+
+align.gezond1 <- align(index = "ref_humangenome", readfile1 = "SRR4785819_1_subset40k.fastq", readfile2 = "SRR4785819_2_subset40k.fastq", output_file = "gezond1.BAM")
+align.gezond2 <- align(index = "ref_humangenome", readfile1 = "SRR4785820_1_subset40k.fastq", readfile2 = "SRR4785820_2_subset40k.fastq", output_file = "gezond2.BAM")
+align.gezond3 <- align(index = "ref_humangenome", readfile1 = "SRR4785828_1_subset40k.fastq", readfile2 = "SRR4785828_2_subset40k.fastq", output_file = "gezond3.BAM")
+align.gezond4 <- align(index = "ref_humangenome", readfile1 = "SRR4785831_1_subset40k.fastq", readfile2 = "SRR4785831_2_subset40k.fastq", output_file = "gezond4.BAM")
+
+align.ziek1 <- align(index = "ref_humangenome", readfile1 = "SRR4785979_1_subset40k.fastq", readfile2 = "SRR4785979_2_subset40k.fastq", output_file = "ziek1.BAM")
+align.ziek2 <- align(index = "ref_humangenome", readfile1 = "SRR4785980_1_subset40k.fastq", readfile2 = "SRR4785980_2_subset40k.fastq", output_file = "ziek2.BAM")
+align.ziek3 <- align(index = "ref_humangenome", readfile1 = "SRR4785986_1_subset40k.fastq", readfile2 = "SRR4785986_2_subset40k.fastq", output_file = "ziek3.BAM")
+align.ziek4 <- align(index = "ref_humangenome", readfile1 = "SRR4785988_1_subset40k.fastq", readfile2 = "SRR4785988_2_subset40k.fastq", output_file = "ziek4.BAM")
+
+# Laad Rsamtools voor sorteren en indexeren (dowloaden indien nodig)
+BiocManager::install('Rsamtools')
+library(Rsamtools)
+
+# Bestandsnamen van de monsters
+samples <- c('gezond1', 'gezond2', 'gezond3', 'gezond4', 'ziek1', 'ziek2', 'ziek3', 'ziek4')
+
+# Voor elk monster: sorteer en indexeer de BAM-file
+# Sorteer BAM-bestanden
+lapply(samples, function(s) {sortBam(file = paste0(s, '.BAM'), destination = paste0(s, '.sorted'))
+})
+# Indexeer de gesorteerde BAM-file
+lapply(samples, function(s) {indexBam(file = paste0(s, '.sorted.bam'))
+}) 
