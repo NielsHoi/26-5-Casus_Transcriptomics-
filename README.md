@@ -13,7 +13,8 @@ Nadat de count matrix gemaakt is, kan vervolgens een statistische analyse gedaan
 
 Vervolgens wordt een gene ontology-analyse (GO-analyse) en een KEGG-pathway-analyse om zicht te krijgen op welke genen belangrijk zijn in verrschillende metabolic pathways. Het volledige script wat gebruikt wordt in Rstudio is te vinden bij ["Script"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/tree/main/Script).
 
-C:\Users\niels\OneDrive - NHL Stenden\Downloads\flowchart.png
+<img width="688" height="687" alt="image" src="https://github.com/user-attachments/assets/a61fbf34-d78b-45ad-b321-a0e5682df6aa" />
+
 ## Resultaten
 Om te zien welke genen tot expressie komen bij reumatoïde artrits is een volcano plot gemaakt, de gemaakte volcanoplot is te vinden bij ["Resultaten>VolcanoplotReuma.png"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/blob/main/Resultaten/VolcanoplotReuma.png). In de volcanplot is op de x-as de log2 waarde van de fold-change te zien, en op de y-as de -log10 P-waarde. De groene stippen zijn genen die niet statistisch significant zijn. De grijze stippen zijn genen waarbij er geen verschil is gevonden tussen de genexpressie bij mensen met RA en gezonde mensen. De rode stippen zijn genen die statistisch significant verschillen in genexpressie. In de volcanoplot is te zien dat het gen ANKRD30BL het meest statistisch significant is. 
 
