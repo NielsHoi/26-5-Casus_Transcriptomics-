@@ -42,7 +42,7 @@ Om inzicht te krijgen in biologische processen die geassocieerd zijn met de geë
 </p>
 
 
-Daarnaast is een KEGG-analyse uitgevoerd. De KEGG-analyse is te vinden bij [Resultaten>keggpathway_plot.png](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/blob/main/Resultaten/keggpathway_plot.png). Hierin zijn op de y-as verschillende metabolic pathways zichtbaar. Op de x-as is het percentage genen dat overlap heeft tussen de pathway en het onderzoek. 
+Daarnaast is een KEGG-analyse uitgevoerd om inzicht te krijgen welke pathways betrokken zijn bij RA. 
 
 Verder is er nog een pathway geanalyseerd, de [Rheumatoid arthritis pathway](https://www.kegg.jp/entry/map05323). De geanalyseerde pathway is te vinden ["Resultaten
 /RA_Pathway.png"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/blob/main/Resultaten/RA_Pathway.png). Op deze kaart zijn verschillende genen te zien die belangrijk zijn voor mensen die ziek zijn met RA. Op de geanalyseerde kaart zijn sommige genen gekleurd. Als het gen rood is gekleurd is de expressie hoog, en bij een gen dat blauw is gekleurd, wordt de expressie juist lager.
