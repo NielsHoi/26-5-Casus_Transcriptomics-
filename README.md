@@ -16,7 +16,9 @@ Vervolgens wordt een gene ontology-analyse (GO-analyse) en een KEGG-pathway-anal
 <img width="688" height="687" alt="image" src="https://github.com/user-attachments/assets/a61fbf34-d78b-45ad-b321-a0e5682df6aa" />
 
 ## Resultaten
-Om te zien welke genen tot expressie komen bij reumatoïde artrits is een volcano plot gemaakt, de gemaakte volcanoplot is te vinden bij ["Resultaten>VolcanoplotReuma.png"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/blob/main/Resultaten/VolcanoplotReuma.png). 
+Om te zien welke genen tot expressie komen bij reumatoïde artrits is een volcano plot gemaakt, de gemaakte volcanoplot is te vinden bij ["Resultaten>VolcanoplotReuma.png"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/blob/main/Resultaten/VolcanoplotReuma.png) en in figuur 2.
+
+<img src="Resultaten/VolcanoplotReuma.png" width="600">
 
 Verder is ook een GO-analyse gedaan. De GO-analyse is terug te vinden bij ["Resultaten>GOplot.png"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/blob/main/Resultaten/GO_plot.png). Op de y-as van de GO-plot staan verschillende biologische processen, en op de x-as hoeveel genen bij het bijbehorende biologische proces hoort. De kleur van de stippen laat zien hoe statisch significant de waarden zijn, waarbij rood sterk significant, en blauw minder significant. In de plot is te zien dat lymphocyte differentiation veel genen heeft die ook belangrijk zijn bij RA. 
 
