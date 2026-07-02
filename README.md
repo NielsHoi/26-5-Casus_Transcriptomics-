@@ -42,7 +42,16 @@ Om inzicht te krijgen in biologische processen die geassocieerd zijn met de geë
 </p>
 
 
-Daarnaast is een KEGG-analyse uitgevoerd om inzicht te krijgen welke pathways betrokken zijn bij RA. 
+Daarnaast is een KEGG-analyse uitgevoerd om inzicht te krijgen welke pathways betrokken zijn bij RA. Uit de KEGG-way analyse, te vinden in figuur 4, blijkt dat de hoogste verrijking werd waargenomen voor "Pathways of neurodegeneration – multiple diseases", gevolgd door onder andere de PI3K-Akt signaling pathway en de MAPK signaling pathway. Ook werden verrijkingen gevonden voor pathways gerelateerd aan infectieprocessen, zoals Human papillomavirus infection, Salmonella infection en Shigellosis. Daarnaast werden pathways betrokken bij endocytose en lipid and atherosclerosis ook geïdentificeerd.
+
+<p align="center">
+  <img src="Resultaten/keggpathway_plot.png" width="600">
+</p>
+
+<p align="center">
+ Figuur 4. Resultaat van de KEGG-pathway analyse van geëxpresseerde genen bij RA. De x-as toont het percentage genen dat betrokken is bij een pathway. De grootte van de punten geeft het aantal genen binnen een pathway weer, terwijl de kleur de aangepaste p-waarde (p.adjust) representeert.
+</p>
+
 
 Verder is er nog een pathway geanalyseerd, de [Rheumatoid arthritis pathway](https://www.kegg.jp/entry/map05323). De geanalyseerde pathway is te vinden ["Resultaten
 /RA_Pathway.png"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/blob/main/Resultaten/RA_Pathway.png). Op deze kaart zijn verschillende genen te zien die belangrijk zijn voor mensen die ziek zijn met RA. Op de geanalyseerde kaart zijn sommige genen gekleurd. Als het gen rood is gekleurd is de expressie hoog, en bij een gen dat blauw is gekleurd, wordt de expressie juist lager.
