@@ -1,1 +1,14 @@
+Het goed beheren van data en scripts is belangrijk tijdens het doen van een onderzoek.
+Als het beheren van data niet goed is, is de data onvindbaar zijn of verloren, en zou een andere onderzoeker niet bij de data kunnen komen, wat het onderzoek dus niet reproduceebaar maakt.
+Het goed beheren van data is dus belangrijk voor overzicht en reproduceerbaarheid.
+Een duidelijke mappenstructuur is een systeem waarbij verschillende mappen voor verschillende projecten zijn. Binnenin deze mappen kunnen vervolgens mappen voor de data, de resultaten, de bronnen, etc. voor het project.
+Door mappen duidelijke namen te geven met projectnamen en eventueel datums is het makkelijk terug te vinden.
+Versiebeheer is het systematisch vastleggen van wijzigingen in documenten, bestanden of procedures. Elke aanpassing krijgt een nieuwe versienummering, bijvoorbeeld 1.0, 1.1 of 2.0.
+Hierdoor is terug te vinden wat er is aangepast en is gedaan, en kan met de meest actuele data gewerkt worden.
+Door met # in scipts notities toe te voegen kun je makkelijker terug vinden wat een code doet en waarvoor het is gebruikt. 
+Met # kun je een stuk script uitleggen of onderbouwen, waardoor een ander makkelijk kan zien waarom een stuk code staat.
+Voor het delen van codes kan onder andere Github worden gebruikt. Github werkt ongeveer hetzelfde als een mappenstructuur op de computer. 
+Het is belangrijk om gevoelige of belangrijke data goed te beveiligen. Er mogen geen onbevoegde mensen bij persoonlijke/gevoelige data.
+Open data is echter handig als transparantie van een onderzoek. Door te laten zien hoe je iets hebt gedaan kan een ander het reproducern.
+
 
