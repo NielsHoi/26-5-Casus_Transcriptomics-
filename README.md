@@ -18,7 +18,7 @@ Vervolgens wordt een gene ontology-analyse (GO-analyse) en een KEGG-pathway-anal
 *Flowchart voor de analyse van  *
 
 ## Resultaten
-Om te zien welke genen tot expressie komen bij reumatoïde artrits is een volcano plot gemaakt. In figuur 2 is de volcano plot van de differentiële genexpressieanalyse tussen de onderzochte groepen te vinden. In totaal werden 29.407 genen geanalyseerd. De x-as geeft de log₂ fold change weer, terwijl de y-as de statistische significantie weergeeft als −log₁₀(p-waarde). Zowel opgereguleerde als neergereguleerde genen laten een significante verschil in expressie zien tussen monsters afkomstig van mensen met RA en de controlegroep. Genen zoals ANKRD30BL, MT-ND6, SLC9A3R2 en ZNF598 komen meer tot expressie bij mensen met RA, en genen als IGHV3-53, IGHV1-69 en IGHG4 komen juist minderr tot expressie.
+Om te onderzoeken of er verschil zit tussen genexpressie bij mensen met RA en gezonde mensen is een volcano plot gemaakt. In figuur 2 is de volcano plot van de differentiële genexpressieanalyse tussen de onderzochte groepen te vinden. In totaal werden 29.407 genen geanalyseerd. De x-as geeft de log₂ fold change weer, terwijl de y-as de statistische significantie weergeeft als −log₁₀(p-waarde). Zowel opgereguleerde als neergereguleerde genen laten een significante verschil in expressie zien tussen monsters afkomstig van mensen met RA en de controlegroep. Genen zoals ANKRD30BL, MT-ND6, SLC9A3R2 en ZNF598 komen meer tot expressie bij mensen met RA, en genen als IGHV3-53, IGHV1-69 en IGHG4 komen juist minderr tot expressie.
 
 
 <p align="center">
