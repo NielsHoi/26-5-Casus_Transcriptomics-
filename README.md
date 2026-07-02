@@ -20,12 +20,12 @@ Vervolgens wordt een gene ontology-analyse (GO-analyse) en een KEGG-pathway-anal
 Om te zien welke genen tot expressie komen bij reumatoïde artrits is een volcano plot gemaakt. In figuur 2 is de volcano plot van de differentiële genexpressieanalyse tussen de onderzochte groepen te vinden. In totaal werden 29.407 genen geanalyseerd. De x-as geeft de log₂ fold change weer, terwijl de y-as de statistische significantie weergeeft als −log₁₀(p-waarde). Zowel opgereguleerde als neergereguleerde genen laten een significante verschil in expressie zien tussen monsters afkomstig van mensen met RA en de controlegroep. Genen zoals ANKRD30BL, MT-ND6, SLC9A3R2 en ZNF598 komen meer tot expressie bij mensen met RA, en genen als IGHV3-53, IGHV1-69 en IGHG4 komen juist minderr tot expressie.
 
 <img src="Resultaten/VolcanoplotReuma.png" width="600">
-*Figuur 2. Volcano plot van de differentiële genexpressieanalyse tussen patiënten met RA en gezonde controles. De x-as toont de log₂ fold change en de y-as de −log₁₀(p-waarde).*
+**Figuur 2. Volcano plot van de differentiële genexpressieanalyse tussen patiënten met RA en gezonde controles. De x-as toont de log₂ fold change en de y-as de −log₁₀(p-waarde).**
 
 Om inzicht te krijgen in biologische processen die geassocieerd zijn met de geëxpresseerde genen bij RA is een GO-analyse uitgevoerd. In figuur 3 is te zien dat vooral biologische processen die te maken hebben met het immuunsysteem, zoals lymfocytdifferentiatie, lymfocyt-gemedieerde immuniteit, T-celdifferentiatie en B-celgemedieerde immuniteit, geassocieerd worden met de geëxpresseerde genen. 
 
 <img src="Resultaten/GO_plot.png" width="600">
-*Figuur 3. Resultaat van GO-analyse van de differentieel geëxpresseerde genen bij reumatoïde artritis. De x-as toont de GeneRatio, wat de verhouding weergeeft tussen het aantal genen in een GO-term en het totaal aantal onderzochte genen. De grootte van de punten geeft het aantal genen binnen een biologische procescategorie weer, terwijl de kleur de aangepaste p-waarde (p.adjust) representeert.*
+**Figuur 3. Resultaat van GO-analyse van de differentieel geëxpresseerde genen bij reumatoïde artritis. De x-as toont de GeneRatio, wat de verhouding weergeeft tussen het aantal genen in een GO-term en het totaal aantal onderzochte genen. De grootte van de punten geeft het aantal genen binnen een biologische procescategorie weer, terwijl de kleur de aangepaste p-waarde (p.adjust) representeert.**
 
 Daarnaast is een KEGG-analyse uitgevoerd. De KEGG-analyse is te vinden bij [Resultaten>keggpathway_plot.png](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/blob/main/Resultaten/keggpathway_plot.png). Hierin zijn op de y-as verschillende metabolic pathways zichtbaar. Op de x-as is het percentage genen dat overlap heeft tussen de pathway en het onderzoek. 
 
