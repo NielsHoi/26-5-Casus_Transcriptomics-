@@ -3,7 +3,8 @@
 ## Inleiding
 Reumatoïde artritis (RA) is een chronische ziekte waarbij het immuunsysteem het synovium (ook wel bekend als het gewrichtsslijmvlies) van een mens als het ware aanvalt. Hierdoor kan ontsteking van gewrichtsslijmvlies ontstaan, afbraak van kraakbeen plaatsvinden en vorming van abnormaal weefsel, ook wel pannus genoemd [[1]](https://pmc.ncbi.nlm.nih.gov/articles/PMC8780115/pdf/ijms-23-00905.pdf). Hierdoor kunnen patienten last krijgen van pijn, zwellingen, of stijfheid. Belangrijke oorzaken van RA zijn erfelijkheid, omgevingsfactoren zoals roken, en immuunactivatie. Momenteel is er helaas nog geen goed werkend medicijn. Er zijn verschillende medicijnen beschikbaar, maar niet alle patienten reageren daar goed op. Door het gebrek aan een goed werkend medicijn is er behoefte naar onderzoek naar reuma [[2]](https://core.ac.uk/reader/77600864?utm_source=linkout).
 ### Onderzoeksdoel
-In dit onderzoek wordt met behulp van transcriptomics het verschil in genexpressie bij patiënten met RA en gezonde mensen onderzocht. De acht verkregen samples worden met het humane genoom vergeleken in Rstudio, waarbij onderzoek gedaan wordt naar de genexpressie en metabolic pathways.
+In dit onderzoek wordt met behulp van transcriptomics het verschil in genexpressie bij patiënten met RA en gezonde mensen onderzocht. Ook wordt gekeken naar de biologische processen en pathways waar genen die verschillen in genexpressie bij betrokken zijn. Daarnaast wordt het verschil in genexpressie op de [Rheumatoid arthritis pathway](https://www.kegg.jp/entry/map05323) geprojecteerd. De acht verkregen samples worden met het humane genoom vergeleken in Rstudio.
+
 ## Materiaal en Methode
 Om te kunnen onderzoeken welke genen meer tot expressie komen bij mensen die ziek zijn met reuma dan bij mensen die gezond zijn worden de data geanalyseerd van 4 gezonde mensen, en 4 mensen die besmet zijn met reuma. De data is afkomstig vanuit het synoviumbiopt: weefsel afkomstig in gewrichtsslijmvlies. Personen met RA zijn positief getest op ACPA, personen zonder RA negatief. Van de zieke mensen is het minimaal twaalf maanden bekend dat de mensen ziek zien met RA. De gebruikte data is te vinden onder ["Data>RawData"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/tree/main/Data/RawData). 
 
@@ -53,11 +54,19 @@ Daarnaast is een KEGG-analyse uitgevoerd om inzicht te krijgen welke pathways be
 </p>
 
 
-Verder is er nog een pathway geanalyseerd, de [Rheumatoid arthritis pathway](https://www.kegg.jp/entry/map05323). De geanalyseerde pathway is te vinden ["Resultaten
-/RA_Pathway.png"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/blob/main/Resultaten/RA_Pathway.png). Op deze kaart zijn verschillende genen te zien die belangrijk zijn voor mensen die ziek zijn met RA. Op de geanalyseerde kaart zijn sommige genen gekleurd. Als het gen rood is gekleurd is de expressie hoog, en bij een gen dat blauw is gekleurd, wordt de expressie juist lager.
+Om te onderzoeken welke genen effect hebben op de [Rheumatoid arthritis pathway](https://www.kegg.jp/entry/map05323) is een analyse gedaan waarbij de geëxpresseerrde genen werden geprojecteerd op de pathway. Hierbij werden meerdere genen geïdentificeerd die betrokken zijn bij immuunactivatie, ontstekingsprocessen en gewrichtsschade, zie figuur 5. Verschillende genen die betrokken zijn bij T-celactivatie en cytokinesignalering, waaronder CD28, CTLA4, IL15, IL1B en TLR24, vertoonden veranderde expressieniveaus. Daarnaast werden veranderingen waargenomen in genen die betrokken zijn bij angiogenese, zoals VEGFC en Tie2, en in genen die een rol spelen bij gewrichtsdestructie, zoals MMP13 en CTSL. 
+
+<p align="center">
+  <img src="Resultaten/RA_Pathway.png" width="600">
+</p>
+
+<p align="center">
+ Figuur 5. Pathway-analyse op de [Rheumatoid arthritis pathway](https://www.kegg.jp/entry/map05323). Hierbij zijn genen die een veranderde expressie hebben ten opzichte van gezonde mensen met een kleur aangegeven. 
+</p>
+
 
 ## Conclusie
-Bij dit onderzoek werd gekeken naar de genexpressie van genen die betrokken zijn bij Reumatoïde arrtritis (RA). Uit dit onderzoek blijkt dat er statistisch significant verschil zit tussen de genexpressie van mensen die ziek zijn met RA, en gezonde mensen. De GO-analyse laat zien dat genen die meer tot expressie komen bij mensen met RA betrokken zijn bij het differentieren van lymfocyten en andere immuunsysteem gerelateerde biologische processen. De resultaten bevestigen dat reumaroïde artritis een autoimmuunziekte is. Daarnaast is er bij de pathway-analyse te zien dat er ook sprake is van ontstekingen en abnormale groei van pannus (weefsel in gewrichten).  
+
 
 ## Bronnen en AI-gebruik
 ### Bronnen
