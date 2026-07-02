@@ -18,7 +18,7 @@ Vervolgens wordt een gene ontology-analyse (GO-analyse) en een KEGG-pathway-anal
   <img width="688" height="687" alt="image" src="https://github.com/user-attachments/assets/a61fbf34-d78b-45ad-b321-a0e5682df6aa" />
  </p>
  <p align="center">
-Flowchart voor het verloop van het onderzoek. Om verschil in genexpressie bij mensen met RA en gezonde mensen te onderzoeken wordt data gesorteerd en geindexeerd om vervolgens een count matrix te maken en een statistische analyse te doen. Vervolgens worden een volcano plot, een GO-analyse en een KEGG en pathway-analyse gemaakt en gedaan.
+Figuur 1. Flowchart voor het verloop van het onderzoek. Om verschil in genexpressie bij mensen met RA en gezonde mensen te onderzoeken wordt data gesorteerd en geindexeerd om vervolgens een count matrix te maken en een statistische analyse te doen. Vervolgens worden een volcano plot, een GO-analyse en een KEGG en pathway-analyse gemaakt en gedaan.
 </p>
 
 
