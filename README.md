@@ -24,8 +24,15 @@ Om te zien welke genen tot expressie komen bij reumatoïde artrits is een volcan
 
 Om inzicht te krijgen in biologische processen die geassocieerd zijn met de geëxpresseerde genen bij RA is een GO-analyse uitgevoerd. In figuur 3 is te zien dat vooral biologische processen die te maken hebben met het immuunsysteem, zoals lymfocytdifferentiatie, lymfocyt-gemedieerde immuniteit, T-celdifferentiatie en B-celgemedieerde immuniteit, geassocieerd worden met de geëxpresseerde genen. 
 
-<img src="Resultaten/GO_plot.png" width="600">
-**Figuur 3. Resultaat van GO-analyse van de differentieel geëxpresseerde genen bij reumatoïde artritis. De x-as toont de GeneRatio, wat de verhouding weergeeft tussen het aantal genen in een GO-term en het totaal aantal onderzochte genen. De grootte van de punten geeft het aantal genen binnen een biologische procescategorie weer, terwijl de kleur de aangepaste p-waarde (p.adjust) representeert.**
+
+<p align="center">
+  <img src="Resultaten/GO_plot.png" width="600">
+</p>
+
+<p align="center">
+ Figuur 3. Resultaat van GO-analyse van de differentieel geëxpresseerde genen bij reumatoïde artritis. De x-as toont de GeneRatio, wat de verhouding weergeeft tussen het aantal genen in een GO-term en het totaal aantal onderzochte genen. De grootte van de punten geeft het aantal genen binnen een biologische procescategorie weer, terwijl de kleur de aangepaste p-waarde (p.adjust) representeert.
+</p>
+
 
 Daarnaast is een KEGG-analyse uitgevoerd. De KEGG-analyse is te vinden bij [Resultaten>keggpathway_plot.png](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/blob/main/Resultaten/keggpathway_plot.png). Hierin zijn op de y-as verschillende metabolic pathways zichtbaar. Op de x-as is het percentage genen dat overlap heeft tussen de pathway en het onderzoek. 
 
