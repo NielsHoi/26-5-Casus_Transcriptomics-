@@ -14,12 +14,12 @@ Nadat de count matrix gemaakt is, kan vervolgens een statistische analyse gedaan
 Vervolgens wordt een gene ontology-analyse (GO-analyse) en een KEGG-pathway-analyse om zicht te krijgen op welke genen belangrijk zijn in verrschillende metabolic pathways. Het volledige script wat gebruikt wordt in Rstudio is te vinden bij ["Script"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/tree/main/Script).
 
 <img width="688" height="687" alt="image" src="https://github.com/user-attachments/assets/a61fbf34-d78b-45ad-b321-a0e5682df6aa" />
-<sub> Flowchart .... <sub>
+<sub> Flowchart .... 
 
 ## Resultaten
 Om te zien welke genen tot expressie komen bij reumatoïde artrits is een volcano plot gemaakt. In figuur 2 is de volcano plot van de differentiële genexpressieanalyse tussen de onderzochte groepen te vinden. In totaal werden 29.407 genen geanalyseerd. De x-as geeft de log₂ fold change weer, terwijl de y-as de statistische significantie weergeeft als −log₁₀(p-waarde). Zowel opgereguleerde als neergereguleerde genen laten een significante verschil in expressie zien tussen monsters afkomstig van mensen met RA en de controlegroep. Genen zoals ANKRD30BL, MT-ND6, SLC9A3R2 en ZNF598 komen meer tot expressie bij mensen met chrohn, en genen als IGHV3-53, IGHV1-69 en IGHG4 komen juist minderr tot expressie.
 <img src="Resultaten/VolcanoplotReuma.png" width="600">
-<sub> Figuur 2. Volcano plot van de differentiële genexpressieanalyse tussen patiënten met de ziekte van Crohn en gezonde controles. De x-as toont de log₂ fold change en de y-as de −log₁₀(p-waarde). <sub>
+<sub> Figuur 2. Volcano plot van de differentiële genexpressieanalyse tussen patiënten met de ziekte van Crohn en gezonde controles. De x-as toont de log₂ fold change en de y-as de −log₁₀(p-waarde). 
 
 Verder is ook een GO-analyse gedaan. De GO-analyse is terug te vinden bij ["Resultaten>GOplot.png"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/blob/main/Resultaten/GO_plot.png). Op de y-as van de GO-plot staan verschillende biologische processen, en op de x-as hoeveel genen bij het bijbehorende biologische proces hoort. De kleur van de stippen laat zien hoe statisch significant de waarden zijn, waarbij rood sterk significant, en blauw minder significant. In de plot is te zien dat lymphocyte differentiation veel genen heeft die ook belangrijk zijn bij RA. 
 
