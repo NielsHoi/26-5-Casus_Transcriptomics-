@@ -15,7 +15,7 @@ Nadat de count matrix gemaakt is, kan vervolgens een statistische analyse gedaan
 Vervolgens wordt een gene ontology-analyse (GO-analyse) en een KEGG-pathway-analyse om zicht te krijgen op welke genen belangrijk zijn in verrschillende metabolic pathways. Het volledige script wat gebruikt wordt in Rstudio is te vinden bij ["Script"](https://github.com/NielsHoi/26-5-Casus_Transcriptomics-/tree/main/Script).
 
 <img width="688" height="687" alt="image" src="https://github.com/user-attachments/assets/a61fbf34-d78b-45ad-b321-a0e5682df6aa" />
-*Flowchart .... *
+*Flowchart voor de analyse van  *
 
 ## Resultaten
 Om te zien welke genen tot expressie komen bij reumatoïde artrits is een volcano plot gemaakt. In figuur 2 is de volcano plot van de differentiële genexpressieanalyse tussen de onderzochte groepen te vinden. In totaal werden 29.407 genen geanalyseerd. De x-as geeft de log₂ fold change weer, terwijl de y-as de statistische significantie weergeeft als −log₁₀(p-waarde). Zowel opgereguleerde als neergereguleerde genen laten een significante verschil in expressie zien tussen monsters afkomstig van mensen met RA en de controlegroep. Genen zoals ANKRD30BL, MT-ND6, SLC9A3R2 en ZNF598 komen meer tot expressie bij mensen met RA, en genen als IGHV3-53, IGHV1-69 en IGHG4 komen juist minderr tot expressie.
@@ -66,13 +66,22 @@ Om te onderzoeken welke genen effect hebben op de [Rheumatoid arthritis pathway]
 
 
 ## Conclusie
+In deze studie werd onderzocht welke genen en biologische processen verschillen tussen patiënten met reumatoïde artritis (RA) en gezonde controles. De genexpressie, weergegeven in een volcano plot, liet zien dat er statistisch significant verschil in genexpressie is. Onder de meest opvallende genen bevonden zich onder andere ANKRD30BL, MT-ND6, SLC9A3R2, ZNF598, IGHV3-53, IGHV1-69 en IGHG4. 
 
+Uit de GO-analyse bleek dat de geëxpresseerde genen voornamelijk voorkwamen bij processen die te maken hebben met immunologische processen. Met name de biologische processen lymfocytdifferentiatie, adaptieve immuunrespons, T-celdifferentiatie, B-celgemedieerde immuniteit en lymfocyt-gemedieerde immuniteit waren significant verrijkt. Dit wijst erop dat verandering in de regulatie en activatie van immuuncellen bij mensen met RA een belangrijke rol speelt. De KEGG-pathway analyse identificeerde meerdere verrijkte signaalroutes, waaronder de PI3K-Akt signaling pathway en de MAPK signaling pathway. Deze routes zijn betrokken bij celactivatie, proliferatie en ontstekingsreacties [[3]](https://www.nature.com/articles/s41392-021-00828-5). 
 
-## Bronnen en AI-gebruik
+Projectie van de expressiegegevens op de KEGG rheumatoid arthritis pathway liet zien dat verschillende genen betrokken zijn bij immuunactivatie, cytokinesignalering, angiogenese en gewrichtsdestructie. Dit ondersteunt het huidige inzicht dat RA wordt gekenmerkt door een ontregelde immuunrespons die leidt tot chronische ontsteking en progressieve beschadiging van gewrichten.
+
+De resultaten laten zien dat er statistisch significant verschil in genexpressie is gevonden tussen mensen met RA en gezonde mensen. Ook is gevonden dat de differentiële genexpressie effect heeft op verrschillende biologische processen en pathways die invloed hebben op immuunrespons, productie van immuuncellen, onstekingsreacties en gewrichtdestructie. Dit ondersteunt het huidige inzicht op de klachten die mensen met RA kunnen ervaren.
+
+## Bronnen, AI en Github
 ### Bronnen
 Voor het verslag zijn de volgende bronnen gebruikt:
 [[1]](https://pmc.ncbi.nlm.nih.gov/articles/PMC8780115/pdf/ijms-23-00905.pdf) Jang, S., Kwon, E. J., & Lee, J. J. (2022) Rheumatoid Arthritis: Pathogenic Roles of Diverse Immune Cells. In International Journal of Molecular Sciences (Vol. 23, Number 2). MDPI. https://doi.org/10.3390/ijms23020905
 
 [[2]](https://core.ac.uk/reader/77600864?utm_source=linkout) Author, C., Smolen, J. S., Author, F., Smolen Order of Authors, J. S., Aletaha, D., McInnes, I., & Smolen, J. (n.d.). Elsevier Editorial System(tm) for The Lancet Manuscript Draft Manuscript Number: Title: Rheumatoid Arthritis Article Type: Invited Seminar Seminar: Rheumatoid Arthritis.
+
+[[3]](https://www.nature.com/articles/s41392-021-00828-5) He, Y., Sun, M. M., Zhang, G. G., Yang, J., Chen, K. S., Xu, W. W., & Li, B. (2021). Targeting PI3K/Akt signal transduction for cancer therapy. In Signal Transduction and Targeted Therapy (Vol. 6, Number 1). Springer Nature. https://doi.org/10.1038/s41392-021-00828-5
+
 ### AI-gebruik
 AI is gebruikt om te helpen met spelling, het helpen beginnen met informatie opzoeken, en met het uitleggen van errors in Rstudio.
